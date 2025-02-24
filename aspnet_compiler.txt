@@ -1,0 +1,15 @@
+task
+
+<Project>
+  <PropertyGroup>
+    <MvcBuildViews>true</MvcBuildViews>
+  </PropertyGroup>
+  <Target Name="PrecompileWeb" AfterTargets="Build">
+    <Message Text="Starting AspNetCompiler for $(ProjectDir)" Importance="high" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" TargetPath="$(ProjectDir)\PrecompiledWeb" />
+  </Target>
+</Project>
+
+cmd
+
+msbuild YourSolution.sln /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=true /p:publishUrl="path_to_publish_directory"
