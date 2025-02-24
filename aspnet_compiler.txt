@@ -13,3 +13,5 @@ task
 cmd
 
 msbuild YourSolution.sln /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=true /p:publishUrl="path_to_publish_directory"
+
+msbuild YourSolution.sln /p:Configuration=Release /p:WebProjectOutputDir=.\Publish /p:OutputPath=.\bin /t:ResolveReferences;_CopyWebApplication /p:PrecompileBeforePublish=true /p:UseMerge=true
